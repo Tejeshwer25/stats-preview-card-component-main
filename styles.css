@@ -1,64 +1,99 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+*{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    line-height: 1.5;
 }
 
 body {
-    background-color: #0A0C1B;
-    height: 100vh;
     color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: hsl(233, 47%, 7%);
+    font-family: Inter;
 }
 
 .container {
-    background: #1C1938;
-    width: 90%;
+    background-color: hsl(244, 38%, 16%);
+    margin: 1rem;
     text-align: center;
+    min-width: 250px;
     border-radius: 20px;
-
 }
 
-.container-img {
-    background-image: url('./images/image-header-mobile.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 25vh;
-    border-radius: 20px 20px 0px 0px;
+.container img,
+.img-test {
+  width: 100%;
+  background-image: url(./images/image-header-desktop.jpg);
+  background-size: cover;
+  height: 100%;
+  position: relative;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  min-height: 200px;
 }
 
-.container-img ::after {
-    content: "";
-    width: 100%;
-    min-height: 25px;
-    background: #A854D4;
-    opacity: 0.5;
-    z-index: 2;
-    position: absolute;
+.img-test::after {
+  content: "";
+  background: hsla(277, 64%, 61%, 0.5);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
 
 .container-text {
-    padding: 1rem;
-}
-
-span {
-    color: #A854D4;
+    padding: 2rem 1rem;
 }
 
 .container-text > h1 {
-    line-height: 1;
+    font-size: 1.6rem;
+    margin: 1rem 0;
+}
+
+span {
+    color: hsl(277, 64%, 61%)
 }
 
 .container-text > p {
-    padding: 1.5rem 0;
+    font-weight: 300;
+    margin: 2rem 0rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
 }
 
-.container-numbers > div {
-    margin: 1.5rem 0;
+.container-stats > div{
+    margin: 2rem 0rem;
+}
+
+.container-stats p {
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+@media(min-width: 720px) {
+    .container {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .container-stats {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .container img,
+    .img-test {
+        height: 387.4px;
+        border-radius: 0px 20px 20px 0px;
+    }
+
+    .img-test::after {
+        height: 100%;
+        border-radius: 0px 20px 20px 0px;
+    }
 }
